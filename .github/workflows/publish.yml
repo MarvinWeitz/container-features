@@ -28,6 +28,8 @@ jobs:
   test:
     name: Test ${{ matrix.feature }}
     runs-on: ubuntu-latest
+    # A failing entry marked allow-failure still shows red but doesn't block merge or publish.
+    continue-on-error: ${{ matrix.allow-failure == true }}
     strategy:
       fail-fast: false
       matrix:
@@ -39,6 +41,12 @@ jobs:
           - fiori-dev-stack
           - npm-feeds
           - typescript
+        include:
+          # The upstream CF apt repository is signed with an expired key
+          # (https://github.com/cloudfoundry/cli/issues/3863), which current Debian rejects.
+          # Remove once upstream rotates the key.
+          - feature: btp-cli-tools
+            allow-failure: true
     steps:
       - uses: actions/checkout@v5
 
