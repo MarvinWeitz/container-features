@@ -18,6 +18,8 @@ FALLBACK_TOKEN_ENV_VAR="${TOKEN_ENV_VAR:-NPM_TOKEN}"
 
 CONF_DIR=/usr/local/share/npm-feeds
 mkdir -p "$CONF_DIR"
+# Start from an empty feed list so re-running the install does not duplicate entries.
+: > "$CONF_DIR/feeds.conf"
 
 # Parse feeds and write scope→registry mappings to global npm config.
 # Feed format: '@scope|registryUrl' or '@scope|registryUrl|TOKEN_VAR'
@@ -34,6 +36,11 @@ if [ -n "$FEEDS" ]; then
 		fi
 		# Use per-feed TOKEN_VAR if provided, otherwise fall back to global default.
 		token_var="${token_var:-$FALLBACK_TOKEN_ENV_VAR}"
+		# post-create.sh reads the token via ${!token_var}, which only accepts valid shell variable names.
+		if ! [[ "$token_var" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
+			echo "WARNING: Skipping feed ${scope}: '${token_var}' is not a valid environment variable name (use letters, digits and underscores)." >&2
+			continue
+		fi
 		echo "Configuring registry for ${scope}: ${url} (token from \$${token_var})"
 		npm config set --global "${scope}:registry" "${url}"
 		# Store scope, url, token_var for the post-create auth step (tab-separated).

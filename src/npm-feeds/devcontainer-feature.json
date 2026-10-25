@@ -1,6 +1,6 @@
 {
     "id": "npm-feeds",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "name": "npm Private Feeds",
     "description": "Configures private npm registry feeds. Writes scope→registry URL mappings to the global .npmrc at build time. At post-create time, stores auth token entries in the user-only ~/.npmrc using the PAT from the specified env var.",
     "options": {
