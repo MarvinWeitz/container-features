@@ -3,7 +3,8 @@
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "btp-cli-tools": {
-                "version": "8"
+                "version": "8",
+                "skip-cf-on-failure": false
             }
         }
     },
@@ -22,6 +23,7 @@
         "features": {
             "btp-cli-tools": {
                 "version": "8",
+                "skip-cf-on-failure": false,
                 "plugins": "multiapps"
             }
         }
