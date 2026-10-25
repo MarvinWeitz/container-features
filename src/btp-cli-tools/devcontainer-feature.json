@@ -1,6 +1,6 @@
 {
 	"id": "btp-cli-tools",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"name": "BTP CLI Tools",
 	"description": "Installs BTP CLI tools. Currently includes the Cloud Foundry CLI from the official Cloud Foundry apt repository (cf<version>-cli).",
 	"containerEnv": {
@@ -19,7 +19,7 @@
 		"skip-cf-on-failure": {
 			"type": "boolean",
 			"default": true,
-			"description": "Keep building without CF CLI or CF plugins when its verified APT installation fails. The failing CF repository is removed. One example is https://github.com/cloudfoundry/cli/issues/3863."
+			"description": "Keep building without CF CLI or CF plugins when downloading its signing key or its verified APT installation fails. The failing CF repository is removed. One example is https://github.com/cloudfoundry/cli/issues/3863."
 		},
 		"plugins": {
 			"type": "string",
