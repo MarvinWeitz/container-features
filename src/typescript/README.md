@@ -1,6 +1,6 @@
 # TypeScript (typescript)
 
-Installs TypeScript and ts-node as global npm packages, and configures VS Code for TypeScript/JavaScript development.
+Installs TypeScript and [tsx](https://tsx.is) as global npm packages, and configures VS Code for TypeScript/JavaScript development.
 
 Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this feature.
 
@@ -9,7 +9,9 @@ Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this fe
 | Option | Description | Type | Default |
 |---|---|---|---|
 | `typescript` | TypeScript version. `'latest'`, `'none'` to skip, or a specific version (e.g. `5.4.5`). | string | `latest` |
-| `ts-node` | ts-node version. `'latest'`, `'none'` to skip, or a specific version. | string | `latest` |
+| `tsx` | tsx version (runs `.ts` files directly, e.g. `tsx script.ts`). `'latest'`, `'none'` to skip, or a specific version. | string | `latest` |
+
+> **2.0.0:** `ts-node` was replaced by `tsx`, and the `ts-node` option no longer exists. Stay on `typescript:1` if you need ts-node, or install it yourself.
 
 `latest` is resolved when the container image is built, so rebuilding the same configuration can install newer versions. Pin the last working exact version if an update causes a problem or the toolchain must remain stable.
 
@@ -21,29 +23,28 @@ Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this fe
 | `esbenp.prettier-vscode` | Prettier formatter |
 | `YoavBls.pretty-ts-errors` | Human-readable TypeScript errors |
 | `meganrogge.template-string-converter` | Auto-convert to template literals |
-| `codeandstuff.package-json-upgrade` | Show available dependency updates |
 
 ## Settings applied
 
 - `editor.codeActionsOnSave: { "source.fixAll.eslint": "always" }`
 - `typescript.updateImportsOnFileMove.enabled: "always"`
 - `javascript.updateImportsOnFileMove.enabled: "always"`
-- `[javascript][typescript][json][typescriptreact]` → formatter: `esbenp.prettier-vscode`
+- `[javascript][typescript][typescriptreact]` → formatter: `esbenp.prettier-vscode`
 
 ## Example Usage
 
 ```jsonc
 "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/cbs-consulting/container-features/typescript:1": {}
+    "ghcr.io/cbs-consulting/container-features/typescript:2": {}
 }
 ```
 
 Pin a specific TypeScript version:
 
 ```jsonc
-"ghcr.io/cbs-consulting/container-features/typescript:1": {
+"ghcr.io/cbs-consulting/container-features/typescript:2": {
     "typescript": "5.4.5",
-    "ts-node": "none"
+    "tsx": "none"
 }
 ```

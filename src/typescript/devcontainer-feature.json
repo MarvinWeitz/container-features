@@ -1,8 +1,8 @@
 {
     "id": "typescript",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "name": "TypeScript",
-    "description": "Installs TypeScript and ts-node as global npm packages, and configures VS Code for TypeScript/JavaScript development (ESLint, formatter defaults). Requires Node.js / npm to be installed first.",
+    "description": "Installs TypeScript and tsx as global npm packages, and configures VS Code for TypeScript/JavaScript development (ESLint, formatter defaults). Requires Node.js / npm to be installed first.",
     "options": {
         "typescript": {
             "type": "string",
@@ -13,14 +13,14 @@
             "default": "latest",
             "description": "TypeScript version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
         },
-        "ts-node": {
+        "tsx": {
             "type": "string",
             "proposals": [
                 "latest",
                 "none"
             ],
             "default": "latest",
-            "description": "ts-node version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+            "description": "tsx version (runs TypeScript files directly, replaces ts-node). 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
         }
     },
     "installsAfter": [
@@ -30,6 +30,7 @@
         "vscode": {
             "extensions": [
                 "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
                 "YoavBls.pretty-ts-errors",
                 "meganrogge.template-string-converter"
             ],

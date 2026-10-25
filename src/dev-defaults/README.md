@@ -25,6 +25,9 @@ No packages are installed at build time — all value is in the `customizations.
 | `shd101wyy.markdown-preview-enhanced` | Enhanced Markdown preview |
 | `janisdd.vscode-edit-csv` | CSV editing |
 | `mechatroner.rainbow-csv` | CSV column highlighting |
+| `esbenp.prettier-vscode` | Prettier formatter |
+| `codeandstuff.package-json-upgrade` | Show available dependency updates |
+| `rioj7.command-variable` | Extra variables for tasks and launch configs |
 
 ## Settings applied
 
@@ -38,6 +41,7 @@ No packages are installed at build time — all value is in the `customizations.
 - `git.openRepositoryInParentFolders: "always"`
 - `cSpell.language: "en,de-DE"`
 - `[markdown]` → formatter: `yzhang.markdown-all-in-one`
+- `[json][jsonc]` → formatter: `esbenp.prettier-vscode`
 
 ## Example Usage
 

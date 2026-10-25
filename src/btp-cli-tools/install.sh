@@ -13,19 +13,34 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update -y
 apt-get install -y wget gnupg ca-certificates
 
-# VERSION selects the apt package suffix: "8" -> cf8-cli, "7" -> cf7-cli.
-wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | gpg --dearmor -o /usr/share/keyrings/cli.cloudfoundry.org.gpg
-echo "deb [signed-by=/usr/share/keyrings/cli.cloudfoundry.org.gpg] https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+CF_KEYRING=/usr/share/keyrings/cli.cloudfoundry.org.gpg
+CF_SOURCE_LIST=/etc/apt/sources.list.d/cloudfoundry-cli.list
+
+# Adds the signing key + apt source and installs cf<version>-cli.
+# Every step can fail on an unavailable or invalid repository, so all of them are covered by skip-cf-on-failure.
+install_cf() {
+	local key_file
+	key_file="$(mktemp)"
+	# VERSION selects the apt package suffix: "8" -> cf8-cli, "7" -> cf7-cli.
+	wget -q -O "${key_file}" https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key \
+		&& gpg --batch --yes --dearmor -o "${CF_KEYRING}" "${key_file}" \
+		&& echo "deb [signed-by=${CF_KEYRING}] https://packages.cloudfoundry.org/debian stable main" | tee "${CF_SOURCE_LIST}" \
+		&& apt-get update -y \
+		&& apt-get install -y "cf${VERSION}-cli"
+	local status=$?
+	rm -f "${key_file}"
+	return "${status}"
+}
 
 CF_INSTALLED=true
-if ! apt-get update -y || ! apt-get install -y "cf${VERSION}-cli"; then
+if ! install_cf; then
 	if [ "${SKIP_CF_ON_FAILURE}" != "true" ]; then
 		echo "ERROR: Cloud Foundry CLI installation failed." >&2
 		exit 1
 	fi
 	echo "WARNING: Cloud Foundry CLI installation failed and will be skipped."
 	echo "         One upstream example is https://github.com/cloudfoundry/cli/issues/3863."
-	rm -f /etc/apt/sources.list.d/cloudfoundry-cli.list
+	rm -f "${CF_SOURCE_LIST}" "${CF_KEYRING}"
 	CF_INSTALLED=false
 fi
 

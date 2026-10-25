@@ -1,10 +1,10 @@
 #!/bin/bash
-# Scenario test for 'typescript' (typescript only, ts-node skipped).
+# Scenario test for 'typescript' (typescript only, tsx skipped).
 set -e
 
 source dev-container-features-test-lib
 
 check "tsc is installed" tsc --version
-check "ts-node is not installed" bash -c "! command -v ts-node"
+check "tsx is not installed" bash -c "! command -v tsx"
 
 reportResults
