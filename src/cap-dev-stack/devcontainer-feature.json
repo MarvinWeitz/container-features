@@ -1,6 +1,6 @@
 {
 	"id": "cap-dev-stack",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"name": "CAP Dev Stack",
 	"description": "Installs SAP CAP development tools as global npm packages (cds-dk, mbt, mta). Requires Node.js / npm to be installed first.",
 	"options": {

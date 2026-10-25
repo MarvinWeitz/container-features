@@ -7,7 +7,7 @@
             },
             "typescript": {
                 "typescript": "latest",
-                "ts-node": "latest"
+                "tsx": "latest"
             }
         }
     },
@@ -19,7 +19,7 @@
             },
             "typescript": {
                 "typescript": "latest",
-                "ts-node": "none"
+                "tsx": "none"
             }
         }
     }

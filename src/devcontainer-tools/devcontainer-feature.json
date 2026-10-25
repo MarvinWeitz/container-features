@@ -1,6 +1,6 @@
 {
     "id": "devcontainer-tools",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "Dev Container Tools",
     "description": "Installs the Dev Container CLI (@devcontainers/cli) as a global npm package. Requires Node.js / npm to be installed first.",
     "options": {

@@ -21,7 +21,7 @@ Set up a complete SAP BTP toolchain (Cloud Foundry CLI, CAP, Fiori tools, TypeSc
 | Feature | What you get |
 | --- | --- |
 | [`dev-defaults`](src/dev-defaults) | Curated VS Code extensions and editor settings (GitLens, Copilot, spell check, Markdown, CSV, …) |
-| [`typescript`](src/typescript) | TypeScript and `ts-node` globally, plus ESLint, Prettier and Pretty TS Errors |
+| [`typescript`](src/typescript) | TypeScript and `tsx` globally, plus ESLint, Prettier and Pretty TS Errors |
 | [`btp-cli-tools`](src/btp-cli-tools) | Cloud Foundry CLI with optional CF plugins |
 | [`cap-dev-stack`](src/cap-dev-stack) | SAP CAP tooling (`@sap/cds-dk`, `mbt`, `mta`) and CDS extensions |
 | [`fiori-dev-stack`](src/fiori-dev-stack) | SAP Fiori tooling (`yo`, `@sap/generator-fiori`) and Fiori extensions |
@@ -54,7 +54,7 @@ Then run **Dev Containers: Rebuild and Reopen in Container** in VS Code.
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
     "ghcr.io/cbs-consulting/container-features/dev-defaults:1": {},
     "ghcr.io/cbs-consulting/container-features/devcontainer-tools:1": {},
-    "ghcr.io/cbs-consulting/container-features/typescript:1": {},
+    "ghcr.io/cbs-consulting/container-features/typescript:2": {},
     "ghcr.io/cbs-consulting/container-features/btp-cli-tools:1": {},
     "ghcr.io/cbs-consulting/container-features/cap-dev-stack:1": {},
     "ghcr.io/cbs-consulting/container-features/fiori-dev-stack:1": {},
