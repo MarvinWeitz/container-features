@@ -1,6 +1,6 @@
 {
 	"id": "cap-dev-stack",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "CAP Dev Stack",
 	"description": "Installs SAP CAP development tools as global npm packages (cds-dk, mbt, mta). Requires Node.js / npm to be installed first.",
 	"options": {
@@ -20,7 +20,7 @@
 				"none"
 			],
 			"default": "latest",
-			"description": "mbt (MTA Build Tool) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+			"description": "mbt (Cloud MTA Build Tool) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
 		},
 		"mta": {
 			"type": "string",
@@ -29,7 +29,7 @@
 				"none"
 			],
 			"default": "latest",
-			"description": "mta (Cloud MTA Build Tool) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+			"description": "mta (MTA descriptor tool for exploring and validating mta.yaml) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
 		}
 	},
 	"installsAfter": [
@@ -43,7 +43,6 @@
 				"humao.rest-client"
 			],
 			"settings": {
-				"npm.scriptRunner": "node",
 				"[cds]": {
 					"editor.defaultFormatter": "SAPSE.vscode-cds"
 				}

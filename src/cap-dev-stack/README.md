@@ -42,5 +42,4 @@ This feature automatically installs the following when VS Code connects:
 **Extensions:** `SAPSE.vscode-cds`, `qwtel.sqlite-viewer`, `humao.rest-client`
 
 **Settings:**
-- `npm.scriptRunner: "node"`
 - `[cds]` → formatter: `SAPSE.vscode-cds`

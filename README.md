@@ -26,7 +26,7 @@ Set up a complete SAP BTP toolchain (Cloud Foundry CLI, CAP, Fiori tools, TypeSc
 | [`cap-dev-stack`](src/cap-dev-stack) | SAP CAP tooling (`@sap/cds-dk`, `mbt`, `mta`) and CDS extensions |
 | [`fiori-dev-stack`](src/fiori-dev-stack) | SAP Fiori tooling (`yo`, `@sap/generator-fiori`) and Fiori extensions |
 | [`npm-feeds`](src/npm-feeds) | Private npm registries: scope→URL mapping at build time, PAT prompt on first start |
-| [`devcontainer-tools`](src/devcontainer-tools) | Dev Container CLI (`@devcontainers/cli`) and the Dev Containers extension |
+| [`devcontainer-tools`](src/devcontainer-tools) | Dev Container CLI (`@devcontainers/cli`) |
 
 Each Feature's folder has its own README with all available options.
 

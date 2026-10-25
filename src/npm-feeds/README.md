@@ -39,7 +39,7 @@ Omit the token var from entries that should use the fallback:
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| feeds | Semicolon-separated feed entries. Format: `@scope\|registryUrl` or `@scope\|registryUrl\|TOKEN_VAR`. | string | |
+| feeds | Semicolon-separated feed entries. Format: `@scope\|registryUrl` or `@scope\|registryUrl\|TOKEN_VAR`. `TOKEN_VAR` must be a valid environment variable name (letters, digits, `_`); feeds with an invalid name are skipped with a warning. | string | |
 | token-env-var | Fallback env var for feeds that do not specify their own `TOKEN_VAR`. | string | NPM_TOKEN |
 
 ## How auth works
