@@ -6,7 +6,7 @@
 #
 # Requirements (already provided by this repo's dev container):
 #   - Docker             -> via the docker-in-docker feature in .devcontainer/devcontainer.json
-#   - @devcontainers/cli -> installed on first run if missing
+#   - @devcontainers/cli -> installed by the postCreateCommand (or on first run if missing)
 #
 # Usage:
 #   ./test/test.sh                # test every feature in src/

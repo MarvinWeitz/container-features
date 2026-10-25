@@ -6,11 +6,9 @@ set -e
 
 echo "Activating feature 'npm-feeds'"
 
-if ! command -v npm >/dev/null 2>&1; then
-	echo "ERROR: npm was not found on PATH." >&2
-	echo "       Add a Node.js feature (e.g. ghcr.io/devcontainers/features/node) before 'npm-feeds'." >&2
-	exit 1
-fi
+# shellcheck source=npm-utils.sh
+source "$(dirname "$0")/npm-utils.sh"
+require_npm "npm-feeds"
 
 # Feature options (feeds -> FEEDS, token-env-var -> TOKEN_ENV_VAR).
 FEEDS="${FEEDS:-}"
