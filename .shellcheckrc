@@ -1,0 +1,2 @@
+# The test library is provided by the devcontainer CLI at test time.
+disable=SC1091
