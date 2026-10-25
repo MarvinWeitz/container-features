@@ -21,14 +21,13 @@ Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this fe
 | `esbenp.prettier-vscode` | Prettier formatter |
 | `YoavBls.pretty-ts-errors` | Human-readable TypeScript errors |
 | `meganrogge.template-string-converter` | Auto-convert to template literals |
-| `codeandstuff.package-json-upgrade` | Show available dependency updates |
 
 ## Settings applied
 
 - `editor.codeActionsOnSave: { "source.fixAll.eslint": "always" }`
 - `typescript.updateImportsOnFileMove.enabled: "always"`
 - `javascript.updateImportsOnFileMove.enabled: "always"`
-- `[javascript][typescript][json][typescriptreact]` → formatter: `esbenp.prettier-vscode`
+- `[javascript][typescript][typescriptreact]` → formatter: `esbenp.prettier-vscode`
 
 ## Example Usage
 
