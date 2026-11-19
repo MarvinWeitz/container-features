@@ -85,6 +85,17 @@ npm-based tools default to `latest`, which is resolved when the image is built. 
 
 The `:1` tag tracks the latest 1.x release of a Feature. Use a full version such as `:1.2.0` to lock the Feature itself.
 
+## 🤖 Set up with a coding agent
+
+The repository ships an agent skill, [`container-features`](skills/container-features/SKILL.md). It lets a coding agent read your project, pick the Features and options it needs, write `devcontainer.json`, connect private npm feeds without committing a token, and fix a failing build. Install it from the [cbs Agentic Marketplace](https://github.com/cbs-consulting/agentic-marketplace):
+
+```text
+/plugin marketplace add cbs-consulting/agentic-marketplace
+/plugin install container-features@cbs-consulting
+```
+
+That is the Claude Code syntax. The marketplace README has the steps for Codex and GitHub Copilot CLI. Other agents get the skill with `npx skills add cbs-consulting/container-features`. Then ask the agent, for example, "set up a dev container for this project".
+
 ## 🧩 Related
 
 - [**container-templates**](https://github.com/cbs-consulting/container-templates): ready-made Dev Container Templates built on these Features
