@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "container-features",
+  "version": "0.1.0",
+  "description": "Sets up cbs Dev Container Features for SAP BTP, CAP and Fiori projects: picks the Features a project needs, writes devcontainer.json, wires private npm feeds without committing tokens, and fixes failing builds.",
+  "author": {
+    "name": "cbs Corporate Business Solutions Unternehmensberatung GmbH",
+    "email": "cp_opensource@cbs-consulting.de"
+  },
+  "homepage": "https://github.com/cbs-consulting/container-features#readme",
+  "repository": "https://github.com/cbs-consulting/container-features",
+  "license": "Apache-2.0",
+  "keywords": ["devcontainer", "dev-container-features", "sap", "btp", "cap", "fiori", "cloud-foundry"]
+}
