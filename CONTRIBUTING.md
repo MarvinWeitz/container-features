@@ -53,7 +53,11 @@ approach.
    default. CI publishes the new version when the change is merged into
    `main`; without a bump, the change is not published.
 7. Update the Feature's `README.md` if you added or changed an option, and the
-   top-level `README.md` if you added a Feature.
+   top-level `README.md` if you added a Feature. If the change affects how a
+   Feature is chosen or set up (a new Feature, a new major version, a renamed
+   option or a new failure mode), update the agent skill in
+   `skills/container-features/SKILL.md` as well, and raise `version` in
+   `plugin.json` and `.claude-plugin/plugin.json`.
 8. Open a pull request against `main` and fill in the template.
 
 Pull requests are merged through a merge queue. Once the checks pass and the
